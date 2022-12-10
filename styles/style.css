@@ -84,3 +84,8 @@ body {
     color: black;
     text-align: center;
   }
+  .erreur{
+    color: red;
+    text-align: center;
+    font-size: small;
+  }
