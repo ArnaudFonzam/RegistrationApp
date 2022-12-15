@@ -15,7 +15,7 @@ if (isset($_REQUEST['username'], $_REQUEST['phone'], $_REQUEST['password'])){
   $query_search = " SELECT * FROM user where username = '$username'";
   $resul = mysqli_query($conn, $query_search);
   $number_ligne = mysqli_num_rows($resul);
-  if ($number_ligne < 0 ){
+  if ($number_ligne <= 0 ){
     //requéte SQL + mot de passe crypté
     $query = "INSERT into `user` (username, password, phone)
     VALUES ('$username', '".hash('sha256', $password)."', '$phone')";
@@ -26,7 +26,7 @@ if (isset($_REQUEST['username'], $_REQUEST['phone'], $_REQUEST['password'])){
     //Redirecting to other page or webste code or you can set your own html page.
     //window.location = "index.php";
 
-    header('location:index.php');
+    header('location:login.php');
     }
   }else{
     $message = " un utilisateur possède deja ce nom d'utilisateur veiller le changer";
