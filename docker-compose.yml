@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  php-apache:
+    ports:
+      -"80:80"
+    build: './docker/php'
+    volumes:
+      -./app:/var/www/html
+  mysql:
+    ports:
+      "3306:3306"
+    build: './docker/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: "mode_de_pass_mysql"
+      MYSQL_DATABASE: "nom_de_la_BD"
+    volumes:
+      -dbData:/var/lib/mysql
+volumes:
+  app:
+  dbData:
