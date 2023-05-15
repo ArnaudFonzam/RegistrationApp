@@ -35,7 +35,7 @@
         </div>
     </nav>
    <div class="container">
-    <div class="mt-4 p-5 bg-light text-dark rounded">
+      <div class="mt-4 p-5 bg-light text-dark rounded">
         <h2 >Manage your Contact easyly</h2>
         <div class="card"> 
             <div class="card-body"> 
@@ -94,7 +94,6 @@
                                   <input type="submit" name ="updatedata" class="box-button"  value="Update">
                               </div>
                             </form>
-
                             </div>
                         </div>
                     </div>
@@ -164,9 +163,14 @@
                     }
                     ?>
                 </table>
-                <form action="test.php" method="post">
-                  <button type="submit" class="btn btn-primary" class="box-register">Print</button>
-                </form>  
+                <div class="d-flex">
+                  <form action="test.php" method="post">
+                    <button type="submit" class="btn btn-primary" class="box-register">PrintTo PDF</button>
+                  </form>  
+                  <form action="test.php" method="post">
+                    <button type="submit" class="btn btn-primary" class="box-register">Print To Excel</button>
+                  </form>  
+                </div>
             </div>
         </div>
     </div>

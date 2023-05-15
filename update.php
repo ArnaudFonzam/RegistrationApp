@@ -4,7 +4,6 @@ require_once "config.php";
 
 if (isset($_POST['updatedata'])) {
     $id= $_POST['update_id'];
-
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$phone = $_POST['phone'];

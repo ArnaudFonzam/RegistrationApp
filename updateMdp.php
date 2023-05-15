@@ -47,7 +47,7 @@ if (isset($_REQUEST['username'], $_REQUEST['password'])){
             <input type="submit" class="box-button" value="update">
             <?php 
                 if(isset($message)){
-                    echo "<p class='erreur'>".$message."</p>";
+                    echo "<p class='errorMessage'>".$message."</p>";
                 }
             ?>
             <p class="box-register"><a href="login.php">login</a></p>

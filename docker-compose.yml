@@ -1,20 +1,25 @@
-version: "3.9"
+version: "3.3"
 services:
-  php-apache:
+  php_apache:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: php8_0_2_apache
+    depends_on: 
+      - mysql
     ports:
-      -"80:80"
-    build: './docker/php'
+      - 8000:80
     volumes:
-      -./app:/var/www/html
+      - ./docker/php:/var/www/html/
   mysql:
-    ports:
-      "3306:3306"
-    build: './docker/mysql'
-    environment:
-      MYSQL_ROOT_PASSWORD: "mode_de_pass_mysql"
-      MYSQL_DATABASE: "nom_de_la_BD"
+    container_name: mysql_
+    image: mysql
+    command: "--innodb_use_native_aio=0"
     volumes:
-      -dbData:/var/lib/mysql
-volumes:
-  app:
-  dbData:
+      - "./db_data:/var/lib/mysql"
+      - "./mysqlconf:/etc/mysql/conf.d"
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: docker_database
+    ports:
+      - "3306:3306"

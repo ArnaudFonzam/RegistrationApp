@@ -9,7 +9,6 @@ if (isset($_POST['connect'])){
   $query = "SELECT * FROM `user` WHERE username='$username' and password='".hash('sha256', $password)."'";
   $result = mysqli_query($conn,$query) or die(mysql_error());
   $rows = mysqli_num_rows($result);
-  $message = "";
   if($rows==1){
       $_SESSION['username'] = $username;
       header('location: index.php');
@@ -39,7 +38,7 @@ if (isset($_POST['connect'])){
         </form>
         <?php 
           if(isset($message)){
-            echo "<p class='erreur'>".$message."</p>";
+            echo "<p class='errorMessage'>".$message."</p>";
           }
         ?>
         <p class="box-register"><a href="register.php">register</a></p>
