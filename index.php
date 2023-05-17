@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-sm bg-secondary navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="image/profil.png" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
+                <img src="image/profil.png" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> <br>
                 <?php echo $_SESSION['username']; ?>
             </a>
             <form class="d-flex" action="logout.php" method="post">
@@ -43,6 +43,8 @@
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
                     ADD Contact
                 </button>
+                <button type="submit" class="btn btn-primary printToPDF">Print To PDF</button>
+                <button type="submit" class="btn btn-primary printToExcel">Print To Excel</button> 
             </div>
             <!-- The Modal For Addind contact-->
             <div class="modal" id="myModal">
@@ -121,6 +123,56 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal" id="printmodalp">
+                    <div class="modal-dialog">
+                        <div class="modal-content"> 
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="text-dark">Add Range To Print To PDF</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <form action="test.php" method="POST">
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                <label for="From">De</label>
+                                <input type="date" class="box-input" name="dateFrom"><br>
+                                <label for="To">A</label><br>
+                                <input type="date" class="box-input" name="dateTo">
+                              </div>
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                  <input type="submit" name ="deletedata" class="box-button"  value="Print To PDF">
+                              </div>
+                            </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="printmodalx">
+                    <div class="modal-dialog">
+                        <div class="modal-content"> 
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="text-dark">Add Range To Print To Excel</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <form action="excelfile.php" method="POST">
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                <label for="From">De</label>
+                                <input type="date" class="box-input" name="dateFrom" ><br>
+                                <label for="To">A</label><br>
+                                <input type="date" class="box-input" name="dateTo">
+                              </div>
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                  <input type="submit" name ="deletedata" class="box-button"  value="Print To Excel">
+                              </div>
+                            </form>
+
+                            </div>
+                        </div>
+                    </div>
                 <?php
                 require_once "config.php";
                 $query = "select * from personne";
@@ -163,14 +215,6 @@
                     }
                     ?>
                 </table>
-                <div class="d-flex">
-                  <form action="test.php" method="post">
-                    <button type="submit" class="btn btn-primary" class="box-register">PrintTo PDF</button>
-                  </form>  
-                  <form action="test.php" method="post">
-                    <button type="submit" class="btn btn-primary" class="box-register">Print To Excel</button>
-                  </form>  
-                </div>
             </div>
         </div>
     </div>
@@ -213,6 +257,20 @@
           return $(this).text();
         }).get();
         $('#delete_id').val(data[0]);
+      });
+    });
+   </script>
+   <script>
+    $(document).ready(function(){
+      $('.printToPDF').on('click', function(){
+        $('#printmodalp').modal('show');
+      });
+    });
+   </script>
+   <script>
+    $(document).ready(function(){
+      $('.printToExcel').on('click', function(){
+        $('#printmodalx').modal('show');
       });
     });
    </script>

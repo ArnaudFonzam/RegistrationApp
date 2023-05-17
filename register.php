@@ -54,7 +54,7 @@ if (isset($_REQUEST['username'], $_REQUEST['phone'], $_REQUEST['password'])){
             <input type="submit" class="box-button"  value="Save">
             <?php 
                 if(isset($message)){
-                    echo "<p class='erreur'>".$message."</p>";
+                    echo "<p class='errorMessage'>".$message."</p>";
                 }
             ?>
         </form>

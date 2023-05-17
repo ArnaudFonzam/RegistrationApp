@@ -1,6 +1,7 @@
 <?php
 require('config.php');
 session_start();
+$message = "";
 if (isset($_POST['connect'])){
   $username = stripslashes($_REQUEST['username']);
   $username = mysqli_real_escape_string($conn, $username);
