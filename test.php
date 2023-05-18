@@ -12,9 +12,9 @@ class PDF extends FPDF {
 	// Header
 	function Header() {
 		// Logo : 8 >position à gauche du document (en mm), 2 >position en haut du document, 80 >largeur de l'image en mm). La hauteur est calculée automatiquement.
-		$this->Image('logo_agence.png',8,2);
+		$this->Image('image/sua.jpg',90,7, 30);
 		// Saut de ligne 20 mm
-		$this->Ln(20);
+		$this->Ln(32);
 
 		// Titre gras (B) police Helbetica de 11
 		$this->SetFont('Helvetica','B',11);
@@ -113,6 +113,7 @@ mysqli_free_result($result);
 
 
 $pdf->Output('test.pdf','I'); // affichage à l'écran
+header('location:index.php');
 // Ou export sur le serveur
 // $pdf->Output('F', '../test.pdf');
 ?>

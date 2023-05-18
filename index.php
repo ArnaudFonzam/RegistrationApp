@@ -36,7 +36,7 @@
     </nav>
    <div class="container">
       <div class="mt-4 p-5 bg-light text-dark rounded">
-        <h2 >Manage your Contact easyly</h2>
+        <h2 >Manage your Contact easylly</h2>
         <div class="card"> 
             <div class="card-body"> 
             <div id="button">
@@ -134,9 +134,9 @@
                             <form action="test.php" method="POST">
                               <!-- Modal body -->
                               <div class="modal-body">
-                                <label for="From">De</label>
+                                <label for="From">From</label>
                                 <input type="date" class="box-input" name="dateFrom"><br>
-                                <label for="To">A</label><br>
+                                <label for="To">To</label><br>
                                 <input type="date" class="box-input" name="dateTo">
                               </div>
                               <!-- Modal footer -->
@@ -159,9 +159,9 @@
                             <form action="excelfile.php" method="POST">
                               <!-- Modal body -->
                               <div class="modal-body">
-                                <label for="From">De</label>
+                                <label for="From">From</label>
                                 <input type="date" class="box-input" name="dateFrom" ><br>
-                                <label for="To">A</label><br>
+                                <label for="To">To</label><br>
                                 <input type="date" class="box-input" name="dateTo">
                               </div>
                               <!-- Modal footer -->
@@ -271,6 +271,7 @@
     $(document).ready(function(){
       $('.printToExcel').on('click', function(){
         $('#printmodalx').modal('show');
+        exit;
       });
     });
    </script>

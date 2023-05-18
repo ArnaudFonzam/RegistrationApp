@@ -28,6 +28,12 @@ if (isset($_POST['connect'])){
     <title>Manager Contact</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="js/script.js"></script>
+    <!--<style>
+      body{
+        background-image : url('image/start1 (2).jpg');
+        background-size: 100%;
+      }
+    </style>-->
 </head>
 <body>
     <div class="box">
