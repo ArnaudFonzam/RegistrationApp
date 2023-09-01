@@ -1,6 +1,6 @@
 <?php
 require('config.php');
-$message = "";
+$message;
 if (isset($_REQUEST['username'], $_REQUEST['phone'], $_REQUEST['password'])){
   // récupérer le nom d'utilisateur et supprimer les antislashes ajoutés par le formulaire
   $username = stripslashes($_REQUEST['username']);
